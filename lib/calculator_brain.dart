@@ -12,6 +12,15 @@ class Calculate {
     return _bmi.toStringAsFixed(1);
   }
 
+  setButton() {
+    if (_bmi >= 25) {
+    } else if (_bmi > 18.5) {
+      ElevatedButton(onPressed: () {}, child: Text('Normal Weight'));
+    } else {
+      ElevatedButton(onPressed: () {}, child: Text('Under Weight'));
+    }
+  }
+
   String getText() {
     if (_bmi >= 25) {
       return 'OVERWEIGHT';

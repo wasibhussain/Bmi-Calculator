@@ -1,4 +1,5 @@
-
+import 'package:bmi/Screens/weight_gain.dart';
+import 'package:bmi/Screens/weight_loss.dart';
 import 'package:bmi/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -59,11 +60,11 @@ class ResultPage extends StatelessWidget {
                     bmi,
                     style: kBMITextStyle,
                   ),
-                  Text(
+                  const Text(
                     'Normal BMI range:',
                     style: klabelTextStyle,
                   ),
-                  Text(
+                  const Text(
                     '18.5 - 25 kg/m2',
                     style: kBodyTextStyle,
                   ),
@@ -72,24 +73,34 @@ class ResultPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: kBodyTextStyle,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15.0,
                   ),
-                  RawMaterialButton(
-                    onPressed: () {},
-                    constraints: BoxConstraints.tightFor(
-                      width: 200.0,
-                      height: 56.0,
-                    ),
-                    fillColor: Color(0xFF4C4F5E),
-                    elevation: 0.0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)),
-                    child: Text(
-                      'SAVE RESULT',
-                      style: kBodyTextStyle,
-                    ),
-                  ),
+                  resultText == "NORMAL"
+                      ? const SizedBox()
+                      : RawMaterialButton(
+                          onPressed: () {
+                            if (resultText == "OVERWEIGHT") {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: ((context) => WeightLoss())));
+                            } else if (resultText == "UNDERWEIGHT") {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: ((context) => WeightGain())));
+                            } else if (resultText == "NORMAL") {}
+                          },
+                          constraints: BoxConstraints.tightFor(
+                            width: 200.0,
+                            height: 56.0,
+                          ),
+                          fillColor: Color(0xFF4C4F5E),
+                          elevation: 0.0,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Text(
+                            'What To Do',
+                            style: kBodyTextStyle,
+                          ),
+                        ),
                 ],
               ),
             ),
