@@ -94,7 +94,9 @@ class _InputPageState extends State<InputPage> {
                     children: [
                       Text(
                         height.toString(),
+                        
                         style: kDigitTextStyle,
+                        
                       ),
                       Text(
                         'cm',
@@ -104,9 +106,9 @@ class _InputPageState extends State<InputPage> {
                   ),
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
-                      activeTrackColor: Colors.white,
+                      activeTrackColor: Colors.black,
                       inactiveTrackColor: ksliderInactiveColor,
-                      thumbColor: Color(0xFFEB1555),
+                      thumbColor: Colors.black,
                       overlayColor: Color(0x29EB1555),
                       thumbShape:
                           RoundSliderThumbShape(enabledThumbRadius: 15.0),

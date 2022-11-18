@@ -15,8 +15,10 @@ class RoundIconButton extends StatelessWidget {
       ),
       elevation: 0.0,
       onPressed: onPressed,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-      fillColor: Color(0xFF4C4F5E),
+      shape: RoundedRectangleBorder(
+        
+        borderRadius: BorderRadius.circular(10.0)),
+      fillColor: Colors.white,
     );
   }
 }
