@@ -1,4 +1,4 @@
-import 'package:bmi/Screens/diet_plan_30_days.dart';
+import 'package:bmi/Screens/diets/diet_plan_30_days.dart';
 import 'package:bmi/widgets/diet_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';

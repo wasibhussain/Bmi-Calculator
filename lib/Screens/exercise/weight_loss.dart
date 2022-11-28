@@ -1,8 +1,9 @@
-import 'package:bmi/Screens/exercise_plan.dart';
-import 'package:bmi/widgets/exercise_item_widget.dart';
+import 'package:bmi/Screens/exercise/exercise_plan.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+
+import 'exercise_plan.dart';
 
 class WeightLoss extends StatelessWidget {
   const WeightLoss({Key? key}) : super(key: key);

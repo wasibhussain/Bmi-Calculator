@@ -1,5 +1,5 @@
-import 'package:bmi/Screens/weight_gain.dart';
-import 'package:bmi/Screens/weight_loss.dart';
+import 'package:bmi/Screens/diets/weight_gain.dart';
+import 'package:bmi/Screens/exercise/weight_loss.dart';
 import 'package:bmi/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

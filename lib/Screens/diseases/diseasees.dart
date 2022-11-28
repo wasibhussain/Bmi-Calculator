@@ -1,25 +1,28 @@
-import 'package:bmi/Screens/item_detail_screen.dart';
+import 'package:bmi/Screens/diets/item_detail_screen.dart';
 import 'package:bmi/widgets/exercise_item_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../widgets/diet_item_widget.dart';
-import 'exercise_item_detals.dart';
+import '../../widgets/diet_item_widget.dart';
 
-class ExercisePlan extends StatelessWidget {
-  ExercisePlan({Key? key}) : super(key: key);
+class Diseases extends StatelessWidget {
+  Diseases({Key? key}) : super(key: key);
 
   List<Map<String, dynamic>> exerciseItemDetailsMap = [
     {
       "id": 1,
-      "imageUrl": "assets/images/ex1.gif",
-      "title": 'Sprinter sit-up',
-      'subtitle': "Strength, Toning, Core",
-      'step1':
-          'Lie on back with the legs straight and arms by your side, elbows bent at a 90-degree angle',
-      'step2': "Sit up, bringing the left knee toward the right elbow",
-      'step3': "Lower back down to starting position",
+      "title": 'Allergies',
+      'subtitle':
+          "Allergies are an immune response triggered by allergens, an ordinarily harmful substance.",
+      'causes':
+          "People with allergies have especially sensitive immune systems that react when they contact allergens. Common allergens include: foods (nuts, eggs, milk, soy, shellfish, wheat) pollen mold latex pet dander",
+      'symptoms':
+          "Because there are so many possible causes, the symptoms of allergies vary widely. Airborne allergens, like pollen and pet dander, are likely to cause: Eye irritation Runny nose Stuffy nose Puffy, watery eyes Sneezing Inflamed, itchy nose and throat Allergens that are consumed, like foods or certain medications, can cause: Hives or skin rashes Gastrointestinal distress (diarrhea, nausea, vomiting, excessing gas, indigestion) Tingling or swelling of the lips, face, or tongue Itchiness Difficulty breathing or wheezing Fainting/ or lightheadedness In cases of a more extreme response, called anaphylaxis, symptoms are severe and life-threatening.",
+      'treatment':
+          "The easiest and most effective way to treat allergies is to get rid of or avoid the cause. Where unavoidable, some lifestyle changes can reduce your allergy symptoms. For example, if you are allergic to dust mites, make an effort to keep your room clean and free of dust by frequent vacuuming, dusting, and washing of bedding. For pollen allergies, avoid being outside when pollen counts are high and keep the windows to your room shut. Because it is very difficult to avoid certain allergens, medication may be necessary to lessen symptoms caused by allergens, other than food and drugs. Antihistamines: help relieve or prevent the sneezing, itchy eyes and throat, and postnasal drip that the allergen may cause. They are sold in many forms (i.e., pills, nasal sprays, liquids, etc.). Decongestants: help reduce congestion in your nasal membranes by narrowing the blood vessels that supply those membranes. They can be purchased in several forms (liquid, pill or nasal spray) and may be used with an antihistamine or alone to treat nasal swelling related to allergies.  Limit use of nasal sprays to fewer than two to three days in a row because prolonged use can cause the nasal membrane swells, resulting in severe nasal obstruction. Anti-inflammatory agents (e.g., corticosteroid): help reduce swelling of the airways, nasal congestion and sneezing. Typically taken as a nasal spray. Some people report that corticosteroids irritate nasal passages. Allergy shots: recommended for serious allergy sufferers, this series of shots are administered by a healthcare provider and contain small amounts of the allergens that cause you discomfort. The goal of allergy shots is to enable your immune system to build better defenses against allergens. Some allergies go away with age, but others are lifelong.",
+      'prevention':
+          "Avoid the outdoors between 5-10 a.m. and save outside activities for late afternoon or after a heavy rain, when pollen levels are lower. Keep windows in your living spaces closed to lower exposure to pollen. To keep cool, use air conditioners and avoid using window and attic fans. Wear a medical alert bracelet or other means to communicate to others about your allergy in case of a reaction. Discuss a prescription for epinephrine (e.g., EpiPen) with your healthcare provider, if you have risk of serious allergic reaction. Review product labels carefully before buying or consuming any item Know what you are eating or drinking."
     },
     {
       "id": 2,
@@ -187,13 +190,13 @@ class ExercisePlan extends StatelessWidget {
           itemCount: exerciseItemDetailsMap.length,
           itemBuilder: (context, index) => InkWell(
             onTap: (() {
-              Get.to(ExerciseItemDetails(
-                exerciseItemDetailsMap[index]['imageUrl'],
-                exerciseItemDetailsMap[index]['title'],
-                exerciseItemDetailsMap[index]['step1'],
-                exerciseItemDetailsMap[index]['step2'],
-                exerciseItemDetailsMap[index]['step3'],
-              ));
+              // Get.to(ExerciseItemDetails(
+              //   exerciseItemDetailsMap[index]['imageUrl'],
+              //   exerciseItemDetailsMap[index]['title'],
+              //   exerciseItemDetailsMap[index]['step1'],
+              //   exerciseItemDetailsMap[index]['step2'],
+              //   exerciseItemDetailsMap[index]['step3'],
+              // ));
             }),
             child: ExerciseItemsCard(
               imageUrl: exerciseItemDetailsMap[index]['imageUrl'],

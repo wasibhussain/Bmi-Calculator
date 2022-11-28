@@ -1,10 +1,10 @@
-import 'package:bmi/Screens/item_detail_screen.dart';
+import 'package:bmi/Screens/diets/item_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
-import '../widgets/diet_item_widget.dart';
+import '../../widgets/diet_item_widget.dart';
 
 class DietPlan30Days extends StatelessWidget {
   DietPlan30Days({Key? key}) : super(key: key);
