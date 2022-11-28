@@ -37,7 +37,7 @@ class _InputPageState extends State<InputPage> {
         ),
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -104,10 +104,10 @@ class _InputPageState extends State<InputPage> {
                   ),
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
-                      activeTrackColor: Colors.white,
+                      activeTrackColor: Colors.black,
                       inactiveTrackColor: ksliderInactiveColor,
-                      thumbColor: Color(0xFFEB1555),
-                      overlayColor: Color(0x29EB1555),
+                      thumbColor: Color.fromARGB(255, 37, 36, 36),
+                      overlayColor: Color.fromARGB(41, 61, 60, 60),
                       thumbShape:
                           RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
@@ -216,24 +216,59 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          BottomContainer(
-            text: 'CALCULATE',
-            onTap: () {
-              Calculate calc = Calculate(height: height, weight: weight);
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: InkWell(
+              onTap: () {
+                Calculate calc = Calculate(height: height, weight: weight);
 
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ResultPage(
-                    bmi: calc.result(),
-                    resultText: calc.getText(),
-                    advise: calc.getAdvise(),
-                    textColor: calc.getTextColor(),
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ResultPage(
+                        bmi: calc.result(),
+                        resultText: calc.getText(),
+                        advise: calc.getAdvise(),
+                        textColor: calc.getTextColor(),
+                      ),
+                    ));
+              },
+              child: Container(
+                height: 70,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.black),
+                child: const Center(
+                  child: Text(
+                    'CALCULATE',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 24),
                   ),
                 ),
-              );
-            },
+              ),
+            ),
           ),
+          // BottomContainer(
+          //   text: 'CALCULATE',
+          //   onTap: () {
+          //     Calculate calc = Calculate(height: height, weight: weight);
+
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(
+          //         builder: (context) => ResultPage(
+          //           bmi: calc.result(),
+          //           resultText: calc.getText(),
+          //           advise: calc.getAdvise(),
+          //           textColor: calc.getTextColor(),
+          //         ),
+          //       ),
+          //     );
+          //   },
+          // ),
         ],
       ),
 

@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-const kactiveCardColor = Color(0xFF1D1E33);
-const kinactiveCardColor = Color(0xFF111328);
+const kactiveCardColor = Color.fromARGB(255, 240, 240, 243);
+const kinactiveCardColor = Colors.grey;
 const ksliderInactiveColor = Color(0xFF8D8E98);
 const kbottomContainerHeight = 80.0;
-const kbottomContainerColor = Color(0xFFEB1555);
-const klabelTextStyle = TextStyle(
-  fontSize: 18.0,
-  color: Color(0xFF8D8E98),
-);
+const kbottomContainerColor = Color(0xFF111328);
+const klabelTextStyle = TextStyle(fontSize: 18.0, color: Colors.black);
 const kDigitTextStyle = TextStyle(
+  color: Colors.black,
   fontSize: 50,
   fontWeight: FontWeight.w900,
 );

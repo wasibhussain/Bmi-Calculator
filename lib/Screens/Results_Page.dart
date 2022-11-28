@@ -22,9 +22,8 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text('BMI CALCULATOR'),
-        ),
+        centerTitle: true,
+        title: Text('BMI Result'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,18 +97,42 @@ class ResultPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10.0)),
                           child: Text(
                             'What To Do',
-                            style: kBodyTextStyle,
+                            style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
                         ),
                 ],
               ),
             ),
           ),
-          BottomContainer(
-              text: 'RE-CALCULATE',
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: InkWell(
               onTap: () {
                 Navigator.pop(context);
-              }),
+              },
+              child: Container(
+                height: 70,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.black),
+                child: const Center(
+                  child: Text(
+                    'RE-CALCULATE',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 24),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          // BottomContainer(
+          //     text: 'RE-CALCULATE',
+          //     onTap: () {
+          //       Navigator.pop(context);
+          //     }),
         ],
       ),
     );
