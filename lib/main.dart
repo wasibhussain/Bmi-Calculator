@@ -1,3 +1,4 @@
+import 'package:bmi/Screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'Screens/input_page.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         // primaryColor: const Color(0xFF0A0E21),
         // scaffoldBackgroundColor: const Color(0xFF0A0E21),
       ),
-      home: InputPage(),
+      home: SplashScreen(),
     );
   }
 }

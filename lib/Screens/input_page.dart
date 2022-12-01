@@ -1,3 +1,4 @@
+import 'package:bmi/widgets/drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -32,10 +33,10 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text('BMI CALCULATOR'),
-        ),
+        centerTitle: true,
+        title: Text('BMI CALCULATOR'),
       ),
+      drawer: CustomDrawer(),
       body: Column(
         // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

@@ -26,15 +26,17 @@ class Diseases extends StatelessWidget {
     },
     {
       "id": 2,
-      "imageUrl": "assets/images/ex2.gif",
-      "title": 'Dead bugs',
-      'subtitle': "Core",
-      'step1':
-          'Lie on back with arms extended upwards and knees bent at 90degrees with feet in the air',
-      'step2':
-          "Drop your arm and leg on the opposite side and make sure your leg doesn’t touch the floor",
-      'step3':
-          "Bring them slowly back up to starting position and repeat with opposite side",
+      "title": 'Cold and Flu',
+      'subtitle':
+          "Colds and influenza (flu) are the most common illnesses among college students.",
+      'causes':
+          "Both of these illnesses are upper respiratory infections, meaning they involve your nose, throat, and lungs. Viruses cause both colds and flu by increasing inflammation of the membranes in the nose and throat. Most transmission of these viruses occurs via hand-to-hand contact.",
+      'symptoms':
+          "Flu symptoms come on suddenly and affect the body all over. Flu symptoms are usually more serious than a cold and include: fever (100° F),headache, more intense pain and fatigue, and more severe, often dry cough. When you get the flu, you are also more prone to bronchitis, sinus, and ear infections. Cold symptoms mostly affect above the neck and include: a runny or stuffy nose (nasal congestion), sneezing, sore throat, and cough. You may also experience a mild headache, body aches or a low grade fever. Typically, a cold lasts 2-14 days.",
+      'treatment':
+          "If any problem is causing you discomfort, you should seek medical care.Seek medical attention promptly if you have: a fever of 102° F or greater (which may indicate a more serious infection), a persisting cough, especially with a significant fever (which could indicate pneumonia), a persistent sore throat (especially if runny nose does not develop - which could indicate a strep infection), or any cold lasting more than 10 days. Because colds and flu are caused by viruses, they cannot be cured by antibiotics. There are tips to help you feel better and strengthen your immune system to fight illness: Rest more than usual and avoid exercise until symptoms are gone. Drink lots of clear fluids (e.g., water, tea). Stay away from cigarette smoke. Do not take antibiotics unless specifically prescribed for you to cure the illness from which you currently suffer. Avoid drinking alcohol because it weakens your immune system and may interact with medications. Avoid caffeine, which can increase congestion and dehydration. Eat a well-balanced diet, including fruits, vegetables, and grains.",
+      'prevention':
+          "UHS offers flu shots to Princeton students at a reduced cost every fall. Even though getting a flu shot will not completely eliminate your chances of developing the flu, it will certainly reduce the risk. Each year, a new vaccine made from inactivated (killed) influenza viruses is formulated. Since it may take the immune system time to respond to the vaccination, the inactivated vaccine should be given 6 to 8 weeks before flu season begins in order to prevent infection or reduce the severity of the illness. The flu is probably only contagious during the first three days of illness, and the incubation period is 24-72 hours, meaning you might not show symptoms for three days after contracting the virus. It is rare to catch a cold virus through the air – most transmission occurs via hand-to-hand contact. To prevent colds, flu, and other illnesses, follow these tips: Wash your hands often (which is good advice for keeping healthy in any situation). Keep them away from your nose, eyes, and mouth. Use an instant hand sanitizer when you can’t wash your hands. Get regular exercise and eat well. Follow good sleep habits. Get a flu shot each fall (offered to all students at a lower cost by UHS each fall) ."
     },
     {
       "id": 3,
@@ -182,7 +184,7 @@ class Diseases extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Exercises"),
+        title: const Text("Exercises"),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
