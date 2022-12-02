@@ -1,4 +1,5 @@
 import 'package:bmi/Screens/diets/weight_gain.dart';
+import 'package:bmi/Screens/diseases/diseasees.dart';
 import 'package:bmi/Screens/exercise/weight_loss.dart';
 import 'package:bmi/Screens/input_page.dart';
 import 'package:flutter/material.dart';
@@ -52,6 +53,7 @@ class CustomDrawer extends StatelessWidget {
             title: const Text('Diseases'),
             onTap: () {
               Get.back();
+              Get.to(Diseases());
             },
           ),
           const Divider(
