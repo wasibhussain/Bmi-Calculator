@@ -18,7 +18,7 @@ class DiseasesItemDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Diseases Details"),
+        title: Text(title),
       ),
       body: SingleChildScrollView(
           child: Padding(
@@ -37,7 +37,8 @@ class DiseasesItemDetails extends StatelessWidget {
             const Text('Causes',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             Text(causes,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w100)),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w100)),
             const SizedBox(height: 20),
             const Text('Symptoms',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
@@ -50,7 +51,7 @@ class DiseasesItemDetails extends StatelessWidget {
             const Text('Prevention',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             Text(prevention, style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 50),
+
             // InkWell(
             //   onTap: () {
             //     Get.to(CountDownTimer());

@@ -29,6 +29,7 @@ class DiseaseItemsCard extends StatelessWidget {
               const Text(
                 'View Details',
                 style: TextStyle(
+                  color: Colors.grey,
                   decoration: TextDecoration.underline,
                 ),
               ),

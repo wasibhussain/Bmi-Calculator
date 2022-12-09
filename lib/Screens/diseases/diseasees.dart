@@ -130,6 +130,7 @@ class Diseases extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Diseases & Care"),
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
