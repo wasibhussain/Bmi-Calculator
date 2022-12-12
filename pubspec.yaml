@@ -39,6 +39,9 @@ dependencies:
   circular_countdown_timer: ^0.2.2
   introduction_screen: ^2.1.0
   flutter_svg: ^1.1.6
+  firebase_auth: ^4.2.0 
+  cloud_firestore: ^4.2.0
+  firebase_core: ^2.4.0
 
 dev_dependencies:
   flutter_test:
