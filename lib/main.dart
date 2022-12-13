@@ -1,4 +1,6 @@
 import 'package:bmi/Screens/splash_screen.dart';
+import 'package:bmi/network/test_login.dart';
+import 'package:bmi/network/test_signup.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,7 +36,7 @@ class _MyAppState extends State<MyApp> {
         // primaryColor: const Color(0xFF0A0E21),
         // scaffoldBackgroundColor: const Color(0xFF0A0E21),
       ),
-      home: SplashScreen(),
+      home: LoginPage(),
     );
   }
 }
