@@ -3,34 +3,51 @@
 import 'package:bmi/network/test_auth_controller.dart';
 import 'package:bmi/network/test_signup.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    var emailController=TextEditingController();
-    var passwordController=TextEditingController();
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
-    Get.lazyPut(()=>AuthController());
+    Get.lazyPut(() => AuthController());
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
+            SizedBox(height: 90),
             Container(
-              height: h / 3,
-              width: w,
+              height: h / 5,
+              width: w / 3,
               decoration: BoxDecoration(
-                // image: DecorationImage(
-                //   fit: BoxFit.cover,
-                //   image: AssetImage("images/loginimg.png"),
-                // ),
-              ),
+                  // image: DecorationImage(
+                  //   fit: BoxFit.cover,
+                  //   image: AssetImage("images/loginimg.png"),
+                  // ),
+                  ),
+              child: SvgPicture.asset("assets/images/profile_male.svg",
+                  width: 120, height: 120.0),
             ),
             Container(
               margin: EdgeInsets.only(left: 20, right: 20),
@@ -54,12 +71,14 @@ class LoginPage extends StatelessWidget {
                   ),
                   SizedBox(height: 30),
                   textField(
-                      controllers:emailController,
+                      obscureText: false,
+                      controllers: emailController,
                       text: "Email",
                       icon: Icon(Icons.email, color: Colors.grey)),
                   SizedBox(height: 20),
                   textField(
-                      controllers:passwordController,
+                      obscureText: true,
+                      controllers: passwordController,
                       text: "Password",
                       icon: Icon(Icons.password, color: Colors.grey)),
                   SizedBox(height: 20),
@@ -80,19 +99,16 @@ class LoginPage extends StatelessWidget {
             ),
             SizedBox(height: 50),
             GestureDetector(
-              onTap:(){
-                AuthController.instance.login( emailController.text.trim(), passwordController.text.trim());
+              onTap: () {
+                AuthController.instance.login(emailController.text.trim(),
+                    passwordController.text.trim());
               },
               child: Container(
                 height: h / 14,
                 width: w / 2,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  // image: DecorationImage(
-                  //   fit: BoxFit.cover,
-                  //   image: AssetImage("images/loginbtn.png"),
-                  // ),
-                ),
+                    borderRadius: BorderRadius.circular(25),
+                    border: Border.all()),
                 child: Center(
                   child: Text(
                     "Sign In",
@@ -105,7 +121,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: w / 7),
+            SizedBox(height: w / 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -140,7 +156,11 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Container textField({required Icon icon, required String text, required TextEditingController controllers}) {
+  Container textField(
+      {required Icon icon,
+      required String text,
+      required TextEditingController controllers,
+      required bool obscureText}) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -155,6 +175,7 @@ class LoginPage extends StatelessWidget {
         ],
       ),
       child: TextField(
+        obscureText: obscureText,
         controller: controllers,
         decoration: InputDecoration(
           hintText: text,

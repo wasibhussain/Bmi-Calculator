@@ -85,7 +85,7 @@ class SignUp extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         hintText: "Last Name", border: OutlineInputBorder()),
                     controller: lastNameController,
                     validator: (value) {
@@ -100,7 +100,7 @@ class SignUp extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0),
                   child: TextField(
-                    decoration: new InputDecoration(
+                    decoration: const InputDecoration(
                         labelText: "Enter your Mobile number",
                         border: OutlineInputBorder()),
                     keyboardType: TextInputType.number,

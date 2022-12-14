@@ -5,18 +5,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    Get.lazyPut(()=>AuthController());
-    var nameController=TextEditingController();
-    var emailController=TextEditingController();
-    var passwordController=TextEditingController();
+  State<SignUpPage> createState() => _SignUpPageState();
+}
 
-    //List img = ["images/g.png", "images/t.png", "images/f.png"];
+class _SignUpPageState extends State<SignUpPage> {
+  var nameController = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Get.lazyPut(() => AuthController());
+
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -28,15 +41,13 @@ class SignUpPage extends StatelessWidget {
             Container(
               height: h / 3,
               width: w,
-             
               child: Column(
                 children: [
                   SizedBox(
                     height: h / 6,
                   ),
                   SvgPicture.asset("assets/images/profile.svg",
-                width: 120, height: 120.0),
-                 
+                      width: 120, height: 120.0),
                 ],
               ),
             ),
@@ -48,17 +59,20 @@ class SignUpPage extends StatelessWidget {
                 children: [
                   SizedBox(height: 20),
                   textField(
-                      controllers:nameController,
+                      obscureText: false,
+                      controllers: nameController,
                       text: "Name",
                       icon: Icon(Icons.person, color: Colors.grey)),
                   SizedBox(height: 20),
                   textField(
-                      controllers:emailController,
+                      obscureText: false,
+                      controllers: emailController,
                       text: "Email",
                       icon: Icon(Icons.email, color: Colors.grey)),
                   SizedBox(height: 20),
                   textField(
-                      controllers:passwordController,
+                      obscureText: true,
+                      controllers: passwordController,
                       text: "Password",
                       icon: Icon(Icons.password, color: Colors.grey)),
                   // SizedBox(height: 20),
@@ -67,15 +81,21 @@ class SignUpPage extends StatelessWidget {
             ),
             SizedBox(height: 50),
             GestureDetector(
-              onTap: (){
-                AuthController.instance.register(nameController.text.trim(), emailController.text.trim(), passwordController.text.trim());
+              onTap: () {
+                AuthController.instance.register(
+                    nameController.text.trim(),
+                    emailController.text.trim(),
+                    passwordController.text.trim());
+                    
               },
               child: Container(
                 height: h / 14,
                 width: w / 2,
                 decoration: BoxDecoration(
                   border: Border.all(),
-                  borderRadius: BorderRadius.circular(25,),
+                  borderRadius: BorderRadius.circular(
+                    25,
+                  ),
                   // image: DecorationImage(
                   //   fit: BoxFit.cover,
                   //   image: AssetImage("images/loginbtn.png"),
@@ -95,7 +115,7 @@ class SignUpPage extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-               Get.to(LoginPage());
+                Get.to(LoginPage());
               },
               child: Text(
                 "Have an account?",
@@ -105,17 +125,19 @@ class SignUpPage extends StatelessWidget {
                 ),
               ),
             ),
-          
-            
+
             // SizedBox(height: w / 20),
-         
           ],
         ),
       ),
     );
   }
 
-  Container textField({required Icon icon, required String text, required TextEditingController controllers}) {
+  Container textField(
+      {required Icon icon,
+      required String text,
+      required TextEditingController controllers,
+      required bool obscureText}) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -130,6 +152,7 @@ class SignUpPage extends StatelessWidget {
         ],
       ),
       child: TextField(
+        obscureText: obscureText,
         controller: controllers,
         decoration: InputDecoration(
           hintText: text,

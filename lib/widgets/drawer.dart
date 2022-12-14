@@ -1,3 +1,4 @@
+import 'package:bmi/Screens/calories%20food/calories_food.dart';
 import 'package:bmi/Screens/diets/weight_gain.dart';
 import 'package:bmi/Screens/diseases/diseasees.dart';
 import 'package:bmi/Screens/exercise/weight_loss.dart';
@@ -58,7 +59,7 @@ class CustomDrawer extends StatelessWidget {
           ),
           const Divider(
             color: Colors.black,
-            thickness: 0.6,
+            
           ),
           ListTile(
             title: const Text('Calories Calculator'),
@@ -70,6 +71,13 @@ class CustomDrawer extends StatelessWidget {
           Divider(
             color: Colors.black,
           ),
+          ListTile(
+            title: const Text('Calories Food'),
+            onTap: () {
+              Get.to(CaloriesFood());
+            },
+          ),
+          Divider(color: Colors.black),
           ListTile(
             title: const Text('Weight Gain'),
             onTap: () {

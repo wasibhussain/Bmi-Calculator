@@ -30,9 +30,10 @@ class AuthController extends GetxController {
   _initialScreen(User? user) {
     if (user == null) {
       print("login page");
+
       Get.offAll(() => LoginPage());
     } else {
-      Get.offAll(() => SignUpPage());
+      return;
     }
   }
 
@@ -46,10 +47,9 @@ class AuthController extends GetxController {
         "password": password,
       });
 
-      Get.to(LoginPage());
+      Get.to(SplashScreen());
     } catch (e) {
       Get.snackbar("About User", "User message",
-
           snackPosition: SnackPosition.BOTTOM,
           titleText: Text(
             "Account creation failed",
@@ -63,7 +63,7 @@ class AuthController extends GetxController {
   void login(String email, password) async {
     try {
       await auth.signInWithEmailAndPassword(email: email, password: password);
-      Get.to(SplashScreen());
+      return Get.to(SplashScreen());
     } catch (e) {
       Get.snackbar("About Login", "Login message",
           //backgroundColor: Colors.redAccent,
