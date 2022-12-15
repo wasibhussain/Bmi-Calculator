@@ -21,10 +21,11 @@ class CustomDrawer extends StatelessWidget {
             decoration: const BoxDecoration(
               color: Colors.white,
             ),
+            curve: Curves.bounceIn,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Fitness App',
                   style: TextStyle(fontSize: 20),
                 ),
@@ -35,7 +36,6 @@ class CustomDrawer extends StatelessWidget {
                     icon: Icon(Icons.close))
               ],
             ),
-            curve: Curves.bounceIn,
           ),
           const Divider(
             color: Colors.black,
@@ -59,7 +59,6 @@ class CustomDrawer extends StatelessWidget {
           ),
           const Divider(
             color: Colors.black,
-            
           ),
           ListTile(
             title: const Text('Calories Calculator'),
@@ -68,7 +67,7 @@ class CustomDrawer extends StatelessWidget {
               Get.back();
             },
           ),
-          Divider(
+          const Divider(
             color: Colors.black,
           ),
           ListTile(
@@ -77,7 +76,7 @@ class CustomDrawer extends StatelessWidget {
               Get.to(CaloriesFood());
             },
           ),
-          Divider(color: Colors.black),
+          const Divider(color: Colors.black),
           ListTile(
             title: const Text('Weight Gain'),
             onTap: () {
@@ -85,7 +84,7 @@ class CustomDrawer extends StatelessWidget {
               Get.to(WeightGain());
             },
           ),
-          Divider(
+          const Divider(
             color: Colors.black,
           ),
           ListTile(
@@ -95,7 +94,7 @@ class CustomDrawer extends StatelessWidget {
               Get.to(WeightLoss());
             },
           ),
-          Divider(
+          const Divider(
             color: Colors.black,
           ),
         ],
