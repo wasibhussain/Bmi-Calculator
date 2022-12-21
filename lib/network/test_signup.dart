@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_local_variable
+import 'package:bmi/Screens/splash_screen.dart';
 import 'package:bmi/network/test_auth_controller.dart';
 import 'package:bmi/network/test_login.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,8 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  bool _isLoading = false;
+
   var nameController = TextEditingController();
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
@@ -81,12 +84,19 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             SizedBox(height: 50),
             GestureDetector(
-              onTap: () {
+              onTap: () async {
+                setState(() {
+                  _isLoading = true;
+                });
                 AuthController.instance.register(
                     nameController.text.trim(),
                     emailController.text.trim(),
                     passwordController.text.trim());
-                    
+                await Future.delayed(
+                    Duration(seconds: 3)); // Simulate signup delay
+                setState(() {
+                  _isLoading = false;
+                });
               },
               child: Container(
                 height: h / 14,
@@ -102,14 +112,18 @@ class _SignUpPageState extends State<SignUpPage> {
                   // ),
                 ),
                 child: Center(
-                  child: Text(
-                    "Sign Up",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  child: _isLoading
+                      ? CircularProgressIndicator(
+                          color: Colors.grey,
+                        )
+                      : Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                 ),
               ),
             ),

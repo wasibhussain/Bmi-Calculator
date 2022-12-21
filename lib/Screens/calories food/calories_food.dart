@@ -163,7 +163,7 @@ class CaloriesFood extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Calories Food"),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.search))],
       ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
@@ -174,11 +174,11 @@ class CaloriesFood extends StatelessWidget {
             children: [
               const Text(
                 'Fruits',
-                style: const TextStyle(fontSize: 22),
+                style: TextStyle(fontSize: 22),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Image.asset('assets/images/fruits.jpg'),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -202,14 +202,14 @@ class CaloriesFood extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 5),
-                          Divider()
+                          const Divider()
                         ],
                       )),
-                       const SizedBox(height: 20),
-              const Text('Vegitables', style: const TextStyle(fontSize: 22)),
-              SizedBox(height: 5),
+              const SizedBox(height: 20),
+              const Text('Vegitables', style: TextStyle(fontSize: 22)),
+              const SizedBox(height: 5),
               Image.asset('assets/images/veg.jpg'),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -232,18 +232,15 @@ class CaloriesFood extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 5
-                          ),
-                          Divider()
+                          const SizedBox(height: 5),
+                          const Divider()
                         ],
                       )),
-                      const SizedBox(height: 20),
-              const Text('Grains and Pulses',
-                  style: const TextStyle(fontSize: 22)),
-              SizedBox(height: 5),
+              const SizedBox(height: 20),
+              const Text('Grains and Pulses', style: TextStyle(fontSize: 22)),
+              const SizedBox(height: 5),
               Image.asset('assets/images/grains.jpg'),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -266,18 +263,15 @@ class CaloriesFood extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 5
-                          ),
-                          Divider()
+                          const SizedBox(height: 5),
+                          const Divider()
                         ],
                       )),
-                      const SizedBox(height: 20),
-              const Text('Dairy and Eggs',
-                  style: const TextStyle(fontSize: 22)),
-              SizedBox(height: 5),
+              const SizedBox(height: 20),
+              const Text('Dairy and Eggs', style: TextStyle(fontSize: 22)),
+              const SizedBox(height: 5),
               Image.asset('assets/images/eggs.jpg'),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -301,14 +295,14 @@ class CaloriesFood extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 5),
-                          Divider()
+                          const Divider()
                         ],
                       )),
-                      const SizedBox(height: 20),
-              const Text('Fish', style: const TextStyle(fontSize: 22)),
-              SizedBox(height: 5),
+              const SizedBox(height: 20),
+              const Text('Fish', style: TextStyle(fontSize: 22)),
+              const SizedBox(height: 5),
               Image.asset('assets/images/fish.jpg'),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -331,10 +325,8 @@ class CaloriesFood extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 5
-                          ),
-                          Divider()
+                          const SizedBox(height: 5),
+                          const Divider()
                         ],
                       )),
             ],

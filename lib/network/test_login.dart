@@ -14,6 +14,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool _isLoading = false;
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
 
@@ -99,9 +100,17 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 50),
             GestureDetector(
-              onTap: () {
+              onTap: () async {
+                setState(() {
+                  _isLoading = true;
+                });
                 AuthController.instance.login(emailController.text.trim(),
                     passwordController.text.trim());
+                await Future.delayed(
+                    Duration(seconds: 3)); // Simulate signup delay
+                setState(() {
+                  _isLoading = false;
+                });
               },
               child: Container(
                 height: h / 14,
@@ -110,14 +119,18 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(25),
                     border: Border.all()),
                 child: Center(
-                  child: Text(
-                    "Sign In",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  child: _isLoading
+                      ? CircularProgressIndicator(
+                          color: Colors.grey,
+                        )
+                      : Text(
+                          "Sign In",
+                          style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                 ),
               ),
             ),

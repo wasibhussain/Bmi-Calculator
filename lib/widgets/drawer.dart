@@ -51,7 +51,7 @@ class CustomDrawer extends StatelessWidget {
             color: Colors.black,
           ),
           ListTile(
-            title: const Text('Diseases'),
+            title: const Text('Common Diseases'),
             onTap: () {
               Get.back();
               Get.to(Diseases());
@@ -73,7 +73,7 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             title: const Text('Calories Food'),
             onTap: () {
-              Get.to(CaloriesFood());
+              Get.to(const CaloriesFood());
             },
           ),
           const Divider(color: Colors.black),
@@ -81,7 +81,7 @@ class CustomDrawer extends StatelessWidget {
             title: const Text('Weight Gain'),
             onTap: () {
               Get.back();
-              Get.to(WeightGain());
+              Get.to(const WeightGain());
             },
           ),
           const Divider(
@@ -91,7 +91,7 @@ class CustomDrawer extends StatelessWidget {
             title: const Text('Weight Loss'),
             onTap: () {
               Get.back();
-              Get.to(WeightLoss());
+              Get.to(const WeightLoss());
             },
           ),
           const Divider(

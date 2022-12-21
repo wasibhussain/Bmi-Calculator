@@ -22,8 +22,7 @@ class WeightLoss extends StatelessWidget {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               InkWell(
                 onTap: (() {
-                  // Navigator.of(context).push(MaterialPageRoute(
-                  //     builder: (context) => DietPlan7Days()));
+                Get.to(ExercisePlan());
                 }),
                 child: Stack(
                   children: [

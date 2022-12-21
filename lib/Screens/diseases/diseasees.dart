@@ -44,7 +44,7 @@ class Diseases extends StatelessWidget {
       "id": 3,
       "title": 'Conjunctivitis (“pink eye“)',
       'subtitle':
-          "Colds and influenza (flu) are the most common illnesses among college students.",
+          "Pink eye (conjunctivitis) is an inflammation or infection of the transparent membrane (conjunctiva) that lines your eyelid and covers the white part of your eyeball. When small blood vessels in the conjunctiva become inflamed, they're more visible. This is what causes the whites of your eyes to appear reddish or pink.",
       'causes':
           "Conjunctivitis, an inflammation of the transparent membrane (conjunctiva) that lines your eyelids and part of your eyeballs, has several possible causes. It could be a bacterial or viral infection, an allergic reaction to pollen or animal dander, or a result of chemical irritants (smoke, chlorine, lens solution, etc.).",
       'symptoms':
@@ -58,7 +58,7 @@ class Diseases extends StatelessWidget {
       "id": 4,
       "title": 'Diarrhea',
       'subtitle':
-          "Colds and influenza (flu) are the most common illnesses among college students.",
+          "Diarrhea — loose, watery and possibly more-frequent bowel movements — is a common problem. It may be present alone or be associated with other symptoms, such as nausea, vomiting, abdominal pain or weight loss. Luckily, diarrhea is usually short-lived, lasting no more than a few days.",
       'causes':
           "Bacterial infection, caused by contaminated food or water Viral infection Parasites, which can enter the body through food or water Food intolerance, such as the inability to digest lactose, the sugar in milk Overuse of alcohol or laxatives Medication, such as some antibiotics or antacids containing magnesium Menstrual cramps Stress or a panic attack",
       'symptoms':
@@ -112,7 +112,8 @@ class Diseases extends StatelessWidget {
     {
       "id": 8,
       "title": 'Nausea and Vomiting',
-      'subtitle': "Intestinal Gas",
+      'subtitle':
+          " Nausea and vomiting are not diseases, but rather are symptoms of many different conditions, such as infection ('stomach flu'), food poisoning, motion sickness, overeating, blocked intestine, illness, concussion or brain injury, appendicitis and migraines.",
       'causes':
           "Possible causes for nausea and/or vomiting:Viruses in the intestines (viral gastroenteritis, see below) Some medications, such as certain antibiotics and birth control pills Eating too much or eating spoiled food Drinking too much (e.g. alcohol)Motion sickness Morning sickness in pregnant females",
       'symptoms':
@@ -122,6 +123,97 @@ class Diseases extends StatelessWidget {
       'prevention':
           "To prevent gas:Avoid foods that trigger gas. Avoid swallowing excess air by not chewing gum or eating hard candy. Take digestive enzyme supplements, such as Beano (for high-fiber foods) and lactase supplements (for milk products). Eat only small amounts of dairy products with food, if you suspect lactose intolerance. Eat several small meals throughout the day instead of two or three larger ones. Eat slowly, in a relaxed setting, and chew your food thoroughly."
     },
+    {
+      "id": 9,
+      "title": 'Malaria',
+      'subtitle':
+          "Malaria is a serious and sometimes fatal disease caused by a parasite that commonly infects a certain type of mosquito which feeds on humans.",
+      "causes":
+          "A parasitic infection transmitted through the bite of infected mosquitoes.",
+      "symptoms": "Fever, chills, headache, muscle aches, fatigue, nausea.",
+      "treatment": "Antimalarial medications are used to treat malaria.",
+      "prevention":
+          "Using insect repellent, wearing long sleeves and pants, sleeping under a mosquito net, and avoiding areas with high malaria transmission rates can help prevent malaria."
+    },
+    {
+      "id": 10,
+      "title": 'Diabetes',
+      'subtitle':
+          "Diabetes is a chronic (long-lasting) health condition that affects how your body turns food into energy. Your body breaks down most of the food you eat into sugar (glucose) and releases it into your bloodstream. When your blood sugar goes up, it signals your pancreas to release insulin.",
+      "causes":
+          "Diabetes is a chronic condition that occurs when the body is unable to properly use and store glucose (a type of sugar). There are two main types of diabetes: type 1, which is an autoimmune disorder, and type 2, which is a result of insulin resistance.",
+      "symptoms":
+          "Frequent urination, excessive thirst, hunger, fatigue, blurred vision.",
+      "treatment":
+          "Treatment for diabetes includes medications to control blood sugar levels, a healthy diet, and regular physical activity.",
+      "prevention":
+          "Maintaining a healthy weight, eating a balanced diet, and exercising regularly can help prevent type 2 diabetes. There is no known way to prevent type 1 diabetes.",
+    },
+    {
+      "id": 11,
+      "title": 'Heart disease',
+      'subtitle':
+          "Heart disease is the leading cause of death in the United States. The term “heart disease” refers to several types of heart conditions",
+      "causes":
+          "Heart disease is a term used to describe a range of conditions that affect the heart and blood vessels. Some common causes of heart disease include high blood pressure, high cholesterol, obesity, and smoking.",
+      "symptoms":
+          "Chest pain, shortness of breath, fatigue, irregular heartbeats.",
+      "treatment":
+          "Treatment for heart disease may include medications to control blood pressure and cholesterol, lifestyle changes (such as eating a healthy diet and exercising), and in some cases, surgery.",
+      "prevention":
+          "Making lifestyle changes, such as eating a healthy diet, exercising regularly, and not smoking, can help prevent heart disease.",
+    },
+    {
+      "id": 12,
+      "title": 'Cancer',
+      'subtitle':
+          "Cancer refers to any one of a large number of diseases characterized by the development of abnormal cells that divide uncontrollably and have the ability to infiltrate and destroy normal body tissue. Cancer often has the ability to spread throughout your body. Cancer is the second-leading cause of death in the world.",
+      "causes":
+          "Cancer is a group of diseases characterized by the uncontrolled growth and spread of abnormal cells. The exact cause of cancer is not always known, but certain factors can increase the risk of developing cancer, including tobacco use, exposure to certain chemicals and substances, and certain infections.",
+      "symptoms":
+          "Symptoms of cancer vary depending on the type and location of the cancer. Some common symptoms include persistent fatigue, unexplained weight loss, and changes in bowel or bladder habits.",
+      "treatment":
+          "Treatment for cancer may include surgery, chemotherapy, radiation therapy, or a combination of these treatments.",
+      "prevention":
+          "Some ways to reduce the risk of cancer include not smoking, limiting alcohol consumption, getting vaccinated against certain infections, and avoiding exposure to certain chemicals and substances.",
+    },
+    {
+      "id": 13,
+      "title": 'HIV/AIDS',
+      'subtitle':
+          "Human immunodeficiency virus (HIV) is a virus that attacks the immune system, which is the body's natural defense against illness. HIV infection can lead to acquired immunodeficiency syndrome (AIDS), which is a condition that can leave the body vulnerable to serious infections and cancers. HIV/AIDS is a serious public health problem that has affected millions of people around the world.",
+      "causes":
+          "HIV (human immunodeficiency virus) is a virus that attacks the immune system and can lead to AIDS (acquired immune deficiency syndrome). HIV is transmitted through certain body fluids, such as blood and semen.",
+      "symptoms":
+          "Many people with HIV do not have any symptoms when they are first infected. However, as the virus progresses, it can cause symptoms such as fever, fatigue, and weight loss.",
+      "treatment":
+          "There is no cure for HIV/AIDS, but there are treatments that can help manage the condition and extend the lives of people living with HIV. These treatments are known as antiretroviral therapy (ART). ART involves taking a combination of medications (called an 'ART regimen') that work to suppress the virus, lower the amount of virus in the body (also known as the 'viral load'), and improve the immune system. ART is typically recommended for all people with HIV, regardless of how advanced the disease is.",
+      "prevention":
+          "In addition to ART, there are other ways to prevent the spread of HIV. One of the most effective ways to prevent HIV transmission is to use condoms during sexual activity. Other preventive measures include using clean needles and syringes if you inject drugs, and taking medication (called pre-exposure prophylaxis or PrEP) if you are at high risk of HIV infection. It is also important to get tested for HIV regularly, especially if you are at high risk of infection.",
+    },
+    {
+      "id": 14,
+      "title": 'Tuberculosis (TB)',
+      'subtitle':
+          "Tuberculosis (TB) is a contagious infection that usually attacks your lungs. It can also spread to other parts of your body, like your brain and spine.",
+      "causes":
+          "TB is caused by a bacterium called Mycobacterium tuberculosis. It is spread through the air when an infected person talks, coughs, or sneezes.",
+      "symptoms":
+          "Symptoms of TB include coughing that lasts three weeks or longer, chest pain, coughing up blood, weakness, fatigue, and weight loss.",
+      "treatment":
+          "TB can be treated with a combination of antibiotics taken over a period of several months. It is important to complete the entire course of treatment to ensure that the infection is fully cleared.",
+      "prevention":
+          "TB can be prevented by getting vaccinated with the TB vaccine (called the Bacillus Calmette-Guérin or BCG vaccine) and by taking precautions to avoid exposure to the bacteria, such as wearing a mask when around someone with TB.",
+    },
+    {
+       "id": 15,
+      "title": 'High blood pressure',
+      "subtitle":"High blood pressure, also known as hypertension, is a condition in which the blood flow through the arteries is too high. This can increase the risk of heart attack, stroke, and other serious health problems.",
+      "causes": "The exact cause of high blood pressure is often unknown, but it can be caused by a variety of factors, including: Being overweight or obese Lack of physical activity, High sodium intake, Stress, Family history of high blood pressure,Chronic conditions such as diabetes or kidney disease..",
+      "symptoms": "High blood pressure often does not have any symptoms, which is why it is sometimes called the 'silent killer.' However, in some cases, people with high blood pressure may experience headaches, dizziness, and nosebleeds..",
+      "treatment": "High blood pressure is typically treated with lifestyle changes, such as eating a healthy diet, getting regular exercise, and maintaining a healthy weight. In some cases, medication may be necessary to control blood pressure. The specific treatment plan will depend on the severity of the condition and any underlying health problems..",
+      "prevention": "There are several steps you can take to help prevent high blood pressure, including: Eating a healthy diet low in salt and saturated and trans fats, Getting regular physical activity, Maintaining a healthy weight, Managing stress, Limiting alcohol consumption, Not smoking or using tobacco products, Getting enough sleep, Monitoring your blood pressure regularly, Following the treatment plan recommended by your healthcare provider.",
+    }
   ];
 
   @override
@@ -130,7 +222,15 @@ class Diseases extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Diseases & Care"),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
+        actions: [IconButton(
+           onPressed: () {
+          //     // method to show the search bar
+          //     showSearch(
+          //       context: context,
+          //       // delegate to customize the search bar
+          //       delegate: CustomSearchDelegate()
+          //     );
+            }, icon: Icon(Icons.search))],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
@@ -152,14 +252,87 @@ class Diseases extends StatelessWidget {
               subtitle: diseaseItemDetailsMap[index]['subtitle'],
             ),
           ),
-          // diteItemsCard(imageUrl: 'assets/images/day2.jpg', title: "Day 2"),
-          // diteItemsCard(imageUrl: 'assets/images/day3.jpg', title: "Day 3"),
-          // diteItemsCard(imageUrl: 'assets/images/day4.png', title: "Day 4"),
-          // diteItemsCard(imageUrl: 'assets/images/day5.jpg', title: "Day 5"),
-          // diteItemsCard(imageUrl: 'assets/images/day6.jpg', title: "Day 6"),
-          // diteItemsCard(imageUrl: 'assets/images/day7.jpg', title: "Day 7")
         ),
       ),
     );
   }
 }
+// class CustomSearchDelegate extends SearchDelegate {
+// // Demo list to show querying
+// List<String> searchTerms = [
+// 	"Apple",
+// 	"Banana",
+// 	"Mango",
+// 	"Pear",
+// 	"Watermelons",
+// 	"Blueberries",
+// 	"Pineapples",
+// 	"Strawberries"
+// ];
+	
+// // first overwrite to
+// // clear the search text
+// @override
+// List<Widget>? buildActions(BuildContext context) {
+// 	return [
+// 	IconButton(
+// 		onPressed: () {
+// 		query = '';
+// 		},
+// 		icon: Icon(Icons.clear),
+// 	),
+// 	];
+// }
+
+// // second overwrite to pop out of search menu
+// @override
+// Widget? buildLeading(BuildContext context) {
+// 	return IconButton(
+// 	onPressed: () {
+// 		close(context, null);
+// 	},
+// 	icon: Icon(Icons.arrow_back),
+// 	);
+// }
+
+// // third overwrite to show query result
+// @override
+// Widget buildResults(BuildContext context) {
+// 	List<String> matchQuery = [];
+// 	for (var fruit in searchTerms) {
+// 	if (fruit.toLowerCase().contains(query.toLowerCase())) {
+// 		matchQuery.add(fruit);
+// 	}
+// 	}
+// 	return ListView.builder(
+// 	itemCount: matchQuery.length,
+// 	itemBuilder: (context, index) {
+// 		var result = matchQuery[index];
+// 		return ListTile(
+// 		title: Text(result),
+// 		);
+// 	},
+// 	);
+// }
+
+// // last overwrite to show the
+// // querying process at the runtime
+// @override
+// Widget buildSuggestions(BuildContext context) {
+// 	List<String> matchQuery = [];
+// 	for (var fruit in searchTerms) {
+// 	if (fruit.contains(query)) {
+// 		matchQuery.add(fruit);
+// 	}
+// 	}
+// 	return ListView.builder(
+// 	itemCount: matchQuery.length,
+// 	itemBuilder: (context, index) {
+// 		var result = matchQuery[index];
+// 		return ListTile(
+// 		title: Text(result),
+// 		);
+// 	},
+// 	);
+// }
+// }
