@@ -1,15 +1,37 @@
+import 'dart:convert';
+
 import 'package:bmi/Screens/splash_screen.dart';
 import 'package:bmi/network/test_login.dart';
 import 'package:bmi/network/test_signup.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'Screens/calories calculator/food.dart';
 import 'Screens/input_page.dart';
+
+List<Food> Foods = [];
+late SharedPreferences preferenceInstance;
+
+void saveFoods() {
+  preferenceInstance.setString("foods", jsonEncode(Foods));
+}
+
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
+  preferenceInstance = await SharedPreferences.getInstance();
+  String? foodsJson = preferenceInstance.getString("foods");
+  Foods = <Food>[];
+  if (foodsJson != null) {
+    Iterable l = json.decode(foodsJson);
+    Foods = List<Food>.from(l.map((model) => Food.fromJson(model)));
+  } else {
+    Foods = [];
+  }
 }
 
 class MyApp extends StatefulWidget {
@@ -25,7 +47,7 @@ class _MyAppState extends State<MyApp> {
       // darkTheme: ThemeData.light(),
 
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
             iconTheme: IconThemeData(color: Colors.black),
             backgroundColor: Colors.white,
             titleTextStyle: TextStyle(

@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_local_variable, avoid_unnecessary_containers, sized_box_for_whitespace, unnecessary_string_escapes
 
+import 'package:bmi/Screens/splash_screen.dart';
 import 'package:bmi/network/test_auth_controller.dart';
 import 'package:bmi/network/test_signup.dart';
 import 'package:flutter/material.dart';
@@ -86,11 +87,17 @@ class _LoginPageState extends State<LoginPage> {
                   Row(
                     children: [
                       Expanded(child: Container()),
-                      Text(
-                        "Forgot your Password?",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.grey[500],
+                      InkWell(
+                        onTap: () {
+                          //TODO latter
+                          Get.to(SplashScreen());
+                        },
+                        child: Text(
+                          "Forgot your Password?",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.grey[500],
+                          ),
                         ),
                       ),
                     ],

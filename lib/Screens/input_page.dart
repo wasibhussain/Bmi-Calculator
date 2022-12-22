@@ -252,36 +252,11 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
           ),
-          // BottomContainer(
-          //   text: 'CALCULATE',
-          //   onTap: () {
-          //     Calculate calc = Calculate(height: height, weight: weight);
-
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //         builder: (context) => ResultPage(
-          //           bmi: calc.result(),
-          //           resultText: calc.getText(),
-          //           advise: calc.getAdvise(),
-          //           textColor: calc.getTextColor(),
-          //         ),
-          //       ),
-          //     );
-          //   },
-          // ),
+      
         ],
       ),
 
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {},
-      //   child: Icon(
-      //     Icons.favorite,
-      //     color: Colors.pink,
-      //     size: 23.0,
-      //   ),
-      //   backgroundColor: kactiveCardColor,
-      // ),
+     
     );
   }
 }

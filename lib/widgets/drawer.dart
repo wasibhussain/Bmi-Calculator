@@ -1,3 +1,4 @@
+import 'package:bmi/Screens/calories%20calculator/main_widget.dart';
 import 'package:bmi/Screens/calories%20food/calories_food.dart';
 import 'package:bmi/Screens/diets/weight_gain.dart';
 import 'package:bmi/Screens/diseases/diseasees.dart';
@@ -63,8 +64,8 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             title: const Text('Calories Calculator'),
             onTap: () {
-              //  Get.to(InputPage());
-              Get.back();
+               Get.to(const MainWidget());
+              //Get.back();
             },
           ),
           const Divider(
