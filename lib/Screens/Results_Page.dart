@@ -1,8 +1,10 @@
+import 'package:bmi/Screens/calories%20food/calories_food.dart';
 import 'package:bmi/Screens/diets/weight_gain.dart';
 import 'package:bmi/Screens/exercise/weight_loss.dart';
 import 'package:bmi/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../Components/BottomContainer_Button.dart';
 import '../Components/Reusable_Bg.dart';
 
@@ -33,7 +35,7 @@ class ResultPage extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(15.0),
               alignment: Alignment.bottomCenter,
-              child: Text(
+              child: const Text(
                 'Your Result',
                 style: ktitleTextStyle,
               ),
@@ -50,7 +52,8 @@ class ResultPage extends StatelessWidget {
                   Text(
                     resultText,
                     style: TextStyle(
-                      color: textColor,
+                      color:
+                          resultText == "OVERWEIGHT" ? Colors.red : textColor,
                       fontSize: 27.0,
                       fontWeight: FontWeight.bold,
                     ),
@@ -75,31 +78,29 @@ class ResultPage extends StatelessWidget {
                   const SizedBox(
                     height: 15.0,
                   ),
-                  resultText == "NORMAL"
-                      ? const SizedBox()
-                      : RawMaterialButton(
-                          onPressed: () {
-                            if (resultText == "OVERWEIGHT") {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: ((context) => WeightLoss())));
-                            } else if (resultText == "UNDERWEIGHT") {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: ((context) => WeightGain())));
-                            } else if (resultText == "NORMAL") {}
-                          },
-                          constraints: BoxConstraints.tightFor(
-                            width: 200.0,
-                            height: 56.0,
-                          ),
-                          fillColor: Color(0xFF4C4F5E),
-                          elevation: 0.0,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)),
-                          child: Text(
-                            'What To Do',
-                            style: TextStyle(color: Colors.white, fontSize: 18),
-                          ),
-                        ),
+                  RawMaterialButton(
+                    onPressed: () {
+                      if (resultText == "OVERWEIGHT") {
+                        Get.to(const WeightLoss());
+                      } else if (resultText == "UNDERWEIGHT") {
+                        Get.to(const WeightGain());
+                      } else if (resultText == "NORMAL") {
+                        Get.to(const CaloriesFood());
+                      }
+                    },
+                    constraints: const BoxConstraints.tightFor(
+                      width: 200.0,
+                      height: 56.0,
+                    ),
+                    fillColor: const Color(0xFF4C4F5E),
+                    elevation: 0.0,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0)),
+                    child: Text(
+                      resultText == "NORMAL" ? 'Keep It Up' : 'Click Here..',
+                      style: const TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                  ),
                 ],
               ),
             ),

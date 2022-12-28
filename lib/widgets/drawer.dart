@@ -2,6 +2,7 @@ import 'package:bmi/Screens/calories%20calculator/main_widget.dart';
 import 'package:bmi/Screens/calories%20food/calories_food.dart';
 import 'package:bmi/Screens/diets/weight_gain.dart';
 import 'package:bmi/Screens/diseases/diseasees.dart';
+import 'package:bmi/Screens/exercise%20videos/exercise_videos.dart';
 import 'package:bmi/Screens/exercise/weight_loss.dart';
 import 'package:bmi/Screens/input_page.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +65,7 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             title: const Text('Calories Calculator'),
             onTap: () {
-               Get.to(const MainWidget());
+              Get.to(const MainWidget());
               //Get.back();
             },
           ),
@@ -93,6 +94,16 @@ class CustomDrawer extends StatelessWidget {
             onTap: () {
               Get.back();
               Get.to(const WeightLoss());
+            },
+          ),
+          const Divider(
+            color: Colors.black,
+          ),
+          ListTile(
+            title: const Text('Fitness Videos'),
+            onTap: () {
+              Get.back();
+              Get.to(ExerciseVideos());
             },
           ),
           const Divider(

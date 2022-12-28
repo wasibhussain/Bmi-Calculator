@@ -10,16 +10,18 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'Screens/calories calculator/food.dart';
 import 'Screens/input_page.dart';
 
-List<Food> Foods = [];
+List<Food> Foods = [].obs as List<Food>;
 late SharedPreferences preferenceInstance;
 
 void saveFoods() {
   preferenceInstance.setString("foods", jsonEncode(Foods));
+  
 }
 
 
 
 void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());

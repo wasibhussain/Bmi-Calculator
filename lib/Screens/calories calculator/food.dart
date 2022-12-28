@@ -1,22 +1,27 @@
 import 'package:bmi/main.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
-
 import 'dart:convert';
 
-class Food {
+class Food extends GetxController {
   String name, imagefile;
   MacroNutrients macros;
   List<FoodPortion> portions;
-  late Function onDelete;
+
   Food(
       {required this.name,
       required this.imagefile,
       required this.macros,
-      this.portions = const []});
+      this.portions = const []}
+      );
 
   void onDeleteButtonPressed() {}
+  void deleteItem() {
+    Foods.remove(this);
+    update();
+  }
 
   Food.fromJson(Map<String, dynamic> jsonObject)
       : name = "",
@@ -90,9 +95,8 @@ class Food {
                 child: FloatingActionButton(
                     backgroundColor: Colors.black,
                     onPressed: () {
-                      Foods.remove(this);
-                    //  saveFoods();
-
+                      deleteItem();
+                      //saveFoods();
                       print('delete');
                     },
                     child: const Icon(Icons.delete)))
@@ -134,6 +138,5 @@ Future<String> getFilePath(String filename) async {
       await getApplicationDocumentsDirectory(); // 1
   String appDocumentsPath = appDocumentsDirectory.path; // 2
   String filePath = '$appDocumentsPath/$filename'; // 3
-
   return filePath;
 }

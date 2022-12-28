@@ -35,6 +35,7 @@ class FoodState extends State<Food> {
   @override
   Widget build(BuildContext context) {
     buildFoods();
+
     return Scaffold(
         body: FoodWidgets.isEmpty
             ? const Center(
@@ -45,6 +46,8 @@ class FoodState extends State<Food> {
               )
             : ListView(
                 children: FoodWidgets,
-              ));
+              )
+              
+              );
   }
 }

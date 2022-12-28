@@ -156,7 +156,6 @@ class NewFoodState extends State<NewFoodWidget> {
     proteinController.clear();
     nameController.clear();
     fatController.clear();
-
     setState(() {});
   }
 
