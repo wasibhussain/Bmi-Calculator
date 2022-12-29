@@ -177,10 +177,15 @@ class CaloriesFood extends StatelessWidget {
                 style: TextStyle(fontSize: 22),
               ),
               const SizedBox(height: 5),
-              Image.asset('assets/images/fruits.jpg'),
+              ClipRRect( borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ), child: Image.asset('assets/images/fruits.jpg')),
               const SizedBox(height: 10),
               ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: caloriesFruitDetailsMap.length,
                   itemBuilder: (context, index) => Column(
@@ -202,13 +207,20 @@ class CaloriesFood extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 5),
-                          const Divider()
+                          const Divider(),
                         ],
                       )),
               const SizedBox(height: 20),
               const Text('Vegitables', style: TextStyle(fontSize: 22)),
               const SizedBox(height: 5),
-              Image.asset('assets/images/veg.jpg'),
+              ClipRRect(
+                 borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ),
+                child: Image.asset('assets/images/veg.jpg')),
               const SizedBox(height: 10),
               ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
@@ -239,7 +251,14 @@ class CaloriesFood extends StatelessWidget {
               const SizedBox(height: 20),
               const Text('Grains and Pulses', style: TextStyle(fontSize: 22)),
               const SizedBox(height: 5),
-              Image.asset('assets/images/grains.jpg'),
+              ClipRRect(
+                 borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ),
+                child: Image.asset('assets/images/grains.jpg')),
               const SizedBox(height: 10),
               ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
@@ -270,7 +289,14 @@ class CaloriesFood extends StatelessWidget {
               const SizedBox(height: 20),
               const Text('Dairy and Eggs', style: TextStyle(fontSize: 22)),
               const SizedBox(height: 5),
-              Image.asset('assets/images/eggs.jpg'),
+              ClipRRect(
+                 borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ),
+                child: Image.asset('assets/images/eggs.jpg')),
               const SizedBox(height: 10),
               ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
@@ -301,7 +327,14 @@ class CaloriesFood extends StatelessWidget {
               const SizedBox(height: 20),
               const Text('Fish', style: TextStyle(fontSize: 22)),
               const SizedBox(height: 5),
-              Image.asset('assets/images/fish.jpg'),
+              ClipRRect(
+                 borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ),
+                child: Image.asset('assets/images/fish.jpg')),
               const SizedBox(height: 10),
               ListView.builder(
                   physics: NeverScrollableScrollPhysics(),

@@ -1,57 +1,76 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutter/material.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import 'package:video_player/video_player.dart';
+class ExerciseVideos extends StatefulWidget {
+  @override
+  _ExerciseVideosState createState() => _ExerciseVideosState();
+}
 
-import 'video_item.dart';
+class _ExerciseVideosState extends State<ExerciseVideos> {
+  late YoutubePlayerController _youtubePlayerController;
+  @override
+  void initState() {
+    super.initState();
+    _youtubePlayerController = YoutubePlayerController(
+        initialVideoId: videoID[0],
+        flags: const YoutubePlayerFlags(
+          autoPlay: false,
+        ));
 
+    print("==>>>${_youtubePlayerController.metadata.title}");
+  }
 
-class ExerciseVideos extends StatelessWidget {
+  List<String> videoID = [
+    '3gU1OLKBcys',
+    '5AxWC49ZMzs',
+    '3gU1OLKBcys',
+    '5AxWC49ZMzs',
+    '5AxWC49ZMzs',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey[100],
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: const Text('Flutter Video Player Demo'),
-        centerTitle: true,
+        title: Text('Youtube Player'),
       ),
-      body: ListView(
-        children: <Widget>[
-          VideoItems(
-             videoPlayerController: VideoPlayerController.network(
-                'https://assets.mixkit.co/videos/preview/mixkit-a-girl-blowing-a-bubble-gum-at-an-amusement-park-1226-large.mp4'
-            ),
-            looping: false,
-            autoplay: false,
-          ),
-          VideoItems(
-            videoPlayerController: VideoPlayerController.network(
-                'https://assets.mixkit.co/videos/preview/mixkit-a-girl-blowing-a-bubble-gum-at-an-amusement-park-1226-large.mp4'
-            ),
-            looping: false,
-            autoplay: false,
-          ),
-          VideoItems(
-            videoPlayerController: VideoPlayerController.network(
-                "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
-            ),
-            looping: false,
-            autoplay: false,
-          ),
-          VideoItems(
-            videoPlayerController: VideoPlayerController.network(
-                "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
-            ),
-            autoplay: false,
-            looping: false,
-          ),
-          VideoItems(
-            videoPlayerController: VideoPlayerController.network(
-                "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
-            ),
-            looping: false,
-            autoplay: false,
-          ),
+      body: Column(
+        children: [
+          Flexible(
+              child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                  child: ListView.builder(
+                      itemCount: videoID.length,
+                      itemBuilder: (context, index) => Container(
+                            margin: const EdgeInsets.symmetric(vertical: 8),
+                            child: ClipRRect(
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(10),
+                              ),
+                              child: Column(
+                                children: [
+                                  YoutubePlayer(
+                                    controller: YoutubePlayerController(
+                                        initialVideoId: videoID[index],
+                                        flags: const YoutubePlayerFlags(
+                                          autoPlay: false,
+                                        )),
+                                    // showVideoProgressIndicator: true,
+                                    progressIndicatorColor: Colors.blue,
+                                    progressColors: const ProgressBarColors(
+                                        playedColor: Colors.black,
+                                        handleColor: Colors.grey),
+                                  ),
+                                  Text(_youtubePlayerController.metadata.title)
+                                ],
+                              ),
+                            ),
+                          )))),
         ],
       ),
     );

@@ -25,7 +25,7 @@ void initState() {
   super.initState();
   _chewieController = ChewieController(
     videoPlayerController: widget.videoPlayerController,
-    aspectRatio:5/8,
+    aspectRatio:16/9,
     autoInitialize: true,
     autoPlay: widget.autoplay!,
     looping: widget.looping!,
@@ -33,7 +33,7 @@ void initState() {
       return Center(
         child: Text(
           errorMessage,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
       );
     },
@@ -45,6 +45,7 @@ Widget build(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Chewie(
+      
       controller: _chewieController,
     ),
   );
