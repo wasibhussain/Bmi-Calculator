@@ -23,28 +23,33 @@ class _ExerciseVideosState extends State<ExerciseVideos> {
   }
 
   List<String> videoID = [
-    '3gU1OLKBcys',
-    '5AxWC49ZMzs',
-    '3gU1OLKBcys',
-    '5AxWC49ZMzs',
-    '5AxWC49ZMzs',
+    'l2BAM76LTWU',
+    'bHpLl8H69V8',
+    'zMv2oo_CnhY',
+    'oWLSLpcF0iY',
+    'Z7ZWbk-_jw4',
+    't7nrOBBfcYI',
+    '0cddsEaYMqg',
+    'bIthHcAxehg',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Youtube Player'),
+        centerTitle: true,
+        title: Text('Exercise For Kids'),
       ),
       body: Column(
         children: [
           Flexible(
               child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                  margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                   child: ListView.builder(
+                    shrinkWrap: true,
                       itemCount: videoID.length,
                       itemBuilder: (context, index) => Container(
-                            margin: const EdgeInsets.symmetric(vertical: 8),
+                            margin: const EdgeInsets.symmetric(vertical: 5),
                             child: ClipRRect(
                               borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(10),
@@ -52,22 +57,17 @@ class _ExerciseVideosState extends State<ExerciseVideos> {
                                 bottomLeft: Radius.circular(10),
                                 bottomRight: Radius.circular(10),
                               ),
-                              child: Column(
-                                children: [
-                                  YoutubePlayer(
-                                    controller: YoutubePlayerController(
-                                        initialVideoId: videoID[index],
-                                        flags: const YoutubePlayerFlags(
-                                          autoPlay: false,
-                                        )),
-                                    // showVideoProgressIndicator: true,
-                                    progressIndicatorColor: Colors.blue,
-                                    progressColors: const ProgressBarColors(
-                                        playedColor: Colors.black,
-                                        handleColor: Colors.grey),
-                                  ),
-                                  Text(_youtubePlayerController.metadata.title)
-                                ],
+                              child: YoutubePlayer(
+                                controller: YoutubePlayerController(
+                                    initialVideoId: videoID[index],
+                                    flags: const YoutubePlayerFlags(
+                                    autoPlay: false,
+                                    )),
+                                showVideoProgressIndicator: true,
+                                progressIndicatorColor: Colors.blue,
+                                progressColors: const ProgressBarColors(
+                                    playedColor: Colors.black,
+                                    handleColor: Colors.grey),
                               ),
                             ),
                           )))),

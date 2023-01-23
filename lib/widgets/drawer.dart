@@ -100,15 +100,13 @@ class CustomDrawer extends StatelessWidget {
             color: Colors.black,
           ),
           ListTile(
-            title: const Text('Fitness Videos'),
+            title: const Text('Exercise For Kids'),
             onTap: () {
               Get.back();
               Get.to(ExerciseVideos());
             },
           ),
-          const Divider(
-            color: Colors.black,
-          ),
+          const Divider(color: Colors.black),
         ],
       ),
     );
