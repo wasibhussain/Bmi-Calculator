@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:bmi/Screens/splash_screen.dart';
-import 'package:bmi/network/test_login.dart';
-import 'package:bmi/network/test_signup.dart';
+import 'package:bmi/network/login.dart';
+import 'package:bmi/network/signup.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

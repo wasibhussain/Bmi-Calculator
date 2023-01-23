@@ -1,5 +1,6 @@
 import 'package:bmi/Screens/calories%20calculator/main_widget.dart';
 import 'package:bmi/Screens/calories%20food/calories_food.dart';
+import 'package:bmi/Screens/calories_burn_info/calories_burn.dart';
 import 'package:bmi/Screens/diets/weight_gain.dart';
 import 'package:bmi/Screens/diseases/diseasees.dart';
 import 'package:bmi/Screens/exercise%20videos/exercise_videos.dart';
@@ -104,6 +105,14 @@ class CustomDrawer extends StatelessWidget {
             onTap: () {
               Get.back();
               Get.to(ExerciseVideos());
+            },
+          ),
+          const Divider(color: Colors.black),
+             ListTile(
+            title: const Text('Calories Burning Info'),
+            onTap: () {
+              Get.back();
+              Get.to( const CaloriesBurnInfo());
             },
           ),
           const Divider(color: Colors.black),

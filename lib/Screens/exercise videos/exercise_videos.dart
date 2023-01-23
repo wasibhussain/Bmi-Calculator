@@ -52,6 +52,7 @@ class _ExerciseVideosState extends State<ExerciseVideos> {
                             margin: const EdgeInsets.symmetric(vertical: 5),
                             child: ClipRRect(
                               borderRadius: const BorderRadius.only(
+                                
                                 topLeft: Radius.circular(10),
                                 topRight: Radius.circular(10),
                                 bottomLeft: Radius.circular(10),

@@ -1,21 +1,21 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_local_variable, avoid_unnecessary_containers, sized_box_for_whitespace, unnecessary_string_escapes
-
 import 'package:bmi/Screens/splash_screen.dart';
-import 'package:bmi/network/test_auth_controller.dart';
-import 'package:bmi/network/test_signup.dart';
+import 'package:bmi/network/auth_controller.dart';
+import 'package:bmi/network/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   bool _isLoading = false;
+
+  var nameController = TextEditingController();
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
 
@@ -23,33 +23,35 @@ class _LoginPageState extends State<LoginPage> {
   void dispose() {
     // TODO: implement dispose
     super.dispose();
+    nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut(() => AuthController());
+
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
-    Get.lazyPut(() => AuthController());
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            SizedBox(height: 90),
             Container(
-              height: h / 5,
-              width: w / 3,
-              decoration: BoxDecoration(
-                  // image: DecorationImage(
-                  //   fit: BoxFit.cover,
-                  //   image: AssetImage("images/loginimg.png"),
-                  // ),
+              height: h / 3,
+              width: w,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: h / 6,
                   ),
-              child: SvgPicture.asset("assets/images/profile_male.svg",
-                  width: 120, height: 120.0),
+                  SvgPicture.asset("assets/images/profile.svg",
+                      width: 120, height: 120.0),
+                ],
+              ),
             ),
             Container(
               margin: EdgeInsets.only(left: 20, right: 20),
@@ -57,21 +59,13 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Hello",
-                    style: TextStyle(
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    "Sign into your account",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.grey[500],
-                    ),
-                  ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
+                  textField(
+                      obscureText: false,
+                      controllers: nameController,
+                      text: "Name",
+                      icon: Icon(Icons.person, color: Colors.grey)),
+                  SizedBox(height: 20),
                   textField(
                       obscureText: false,
                       controllers: emailController,
@@ -83,25 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                       controllers: passwordController,
                       text: "Password",
                       icon: Icon(Icons.password, color: Colors.grey)),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Expanded(child: Container()),
-                      InkWell(
-                        onTap: () {
-                          //TODO latter
-                          Get.to(SplashScreen());
-                        },
-                        child: Text(
-                          "Forgot your Password?",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.grey[500],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  // SizedBox(height: 20),
                 ],
               ),
             ),
@@ -111,7 +87,9 @@ class _LoginPageState extends State<LoginPage> {
                 setState(() {
                   _isLoading = true;
                 });
-                AuthController.instance.login(emailController.text.trim(),
+                AuthController.instance.register(
+                    nameController.text.trim(),
+                    emailController.text.trim(),
                     passwordController.text.trim());
                 await Future.delayed(
                     Duration(seconds: 3)); // Simulate signup delay
@@ -123,15 +101,22 @@ class _LoginPageState extends State<LoginPage> {
                 height: h / 14,
                 width: w / 2,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all()),
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(
+                    25,
+                  ),
+                  // image: DecorationImage(
+                  //   fit: BoxFit.cover,
+                  //   image: AssetImage("images/loginbtn.png"),
+                  // ),
+                ),
                 child: Center(
                   child: _isLoading
                       ? CircularProgressIndicator(
                           color: Colors.grey,
                         )
                       : Text(
-                          "Sign In",
+                          "Sign Up",
                           style: TextStyle(
                             fontSize: 25,
                             color: Colors.black,
@@ -141,35 +126,20 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(height: w / 15),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Don\'t have an account?",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.grey[500],
-                  ),
+            TextButton(
+              onPressed: () {
+                Get.to(LoginPage());
+              },
+              child: Text(
+                "Have an account?",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.grey[500],
                 ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignUpPage()),
-                    );
-                  },
-                  child: Text(
-                    " Create",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
+
+            // SizedBox(height: w / 20),
           ],
         ),
       ),

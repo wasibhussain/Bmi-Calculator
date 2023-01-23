@@ -1,8 +1,8 @@
 // ignore_for_file: unused_field, unnecessary_overrides, unused_element, avoid_print, prefer_const_constructors, empty_catches
 
 import 'package:bmi/Screens/splash_screen.dart';
-import 'package:bmi/network/test_login.dart';
-import 'package:bmi/network/test_signup.dart';
+import 'package:bmi/network/login.dart';
+import 'package:bmi/network/signup.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
